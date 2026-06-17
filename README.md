@@ -1,5 +1,13 @@
 # Caesar Cipher
 
+```
+  ____    _    _____ ____    _    ____
+ / ___|  / \  | ____/ ___|  / \  |  _ \
+| |     / _ \ |  _| \___ \ / _ \ | |_) |
+| |___ / ___ \| |___ ___) / ___ \|  _ <
+ \____/_/   \_\_____|____/_/   \_\_| \_\
+```
+
 A Caesar cipher implementation in C# (.NET 10) with a CLI application and reusable library.
 
 ## Projects
