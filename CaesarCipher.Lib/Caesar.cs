@@ -2,7 +2,7 @@
 
 namespace CaesarCipher.Lib;
 
-public class Caesar(int rotation, string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZÆØÅabcdefghijklmnopqrstuvwxyzæøå0123456789.-_ !")
+public class Caesar(int rotation, string alphabet = Caesar.DefaultAlphabet)
 {
     private char EncodeChar(int position) => alphabet[(position + rotation) % alphabet.Length];
 
@@ -25,7 +25,7 @@ public class Caesar(int rotation, string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ�
             }
             else
             {
-                returnable.Append("#");
+                returnable.Append(character);
             }
         }
 
@@ -44,10 +44,12 @@ public class Caesar(int rotation, string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ�
             }
             else
             {
-                returnable.Append("#");
+                returnable.Append(character);
             }
         }
 
         return returnable.ToString();
     }
+
+    public const string DefaultAlphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZÆØÅabcdefghijklmnopqrstuvwxyzæøå0123456789";
 }

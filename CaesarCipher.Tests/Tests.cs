@@ -40,11 +40,12 @@ public class Tests
         result.ShouldBe(text);
     }
 
-    [TestCase("abc3d", "abc#d")]
-    public void Should_replace_unknown_characters_whith_hashmark(string input, string output)
+    [TestCase("abc!d")]
+    [TestCase("!#¤%&")]
+    public void Should_not_replace_unknown_characters(string input)
     {
         var cipher = new Caesar(0, TEST_ALPHABET);
         var result = cipher.Encode(input);
-        result.ShouldBe(output);
+        result.ShouldBe(input);
     }
 }
