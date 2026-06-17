@@ -6,10 +6,6 @@ namespace CaesarCipher.Tests;
 public class Tests
 {
     private const string TEST_ALPHABET = "abcdef";
-    [SetUp]
-    public void Setup()
-    {
-    }
 
     [TestCase("abc", "cde", 2)]
     [TestCase("abc", "def", 3)]

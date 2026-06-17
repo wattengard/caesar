@@ -1,12 +1,11 @@
-﻿// See https://aka.ms/new-console-template for more information
-using System.CommandLine;
-using System.Drawing;
+﻿using System.CommandLine;
 using System.Text;
 using CaesarCipher.Lib;
 
 Option<FileInfo> fileOption = new("--file")
 {
-    Description = "The file to encode/decode"
+    Description = "The file to encode/decode",
+    Required = true
 };
 
 Option<bool> decodeOption = new("--decode") { Description = "Decode, the default is encode" };
@@ -40,8 +39,6 @@ foreach (var line in contents)
         var handledLine = shouldDecode ? cipher.Decode(line) : cipher.Encode(line);
         var rowsForLine = (int)Math.Ceiling((decimal)handledLine.Length / consoleWidth);
 
-        Console.WriteLine($"{consoleWidth} - {rowsForLine}");
-
         for (int i = 0; i < line.Length; i++)
         {
             var currentPosition = Console.GetCursorPosition();
@@ -73,7 +70,7 @@ string GetJibberish(string text)
         }
         else
         {
-            returnable.Append((char)('a' + new Random().Next(0, 26)));
+            returnable.Append((char)('a' + Random.Shared.Next(0, 26)));
         }
     }
 
@@ -82,5 +79,5 @@ string GetJibberish(string text)
 
 ConsoleColor GetRandomConsoleColor()
 {
-    return (ConsoleColor)new Random().Next(0, 16);
+    return (ConsoleColor) Random.Shared.Next(0, 16);
 }
