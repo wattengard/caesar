@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="CaesarCipher.Lib/CaesarCipher.Lib.csproj" />
+  <Project Path="CaesarCipher.App/CaesarCipher.App.csproj" />
+  <Project Path="CaesarCipher.Tests/CaesarCipher.Tests.csproj" />
+</Solution>
